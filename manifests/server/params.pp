@@ -14,12 +14,12 @@
 #
 class openssh::server::params {
 
-	### Application related parameters
+  ### Application related parameters
 
-	$package_name = $::operatingsystem ? {
-		default => 'openssh-server'
-	}
+  $package_name = $::operatingsystem ? {
+    default => 'openssh-server'
+  }
 
-	$enabled = true
+  $enabled = true
 
 }

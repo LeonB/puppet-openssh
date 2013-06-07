@@ -1,6 +1,6 @@
 class openssh::server::config {
 
-    augeas { "/etc/ssh/sshd_config/PermitRootLogin":
+    augeas { '/etc/ssh/sshd_config/PermitRootLogin':
         context => '/files/etc/ssh/sshd_config',
         changes => [
             'set PermitRootLogin no',
@@ -8,7 +8,7 @@ class openssh::server::config {
         notify  => Class['openssh::server::service'],
     }
 
-    augeas { "/etc/ssh/sshd_config/AcceptEnv":
+    augeas { '/etc/ssh/sshd_config/AcceptEnv':
         context => '/files/etc/ssh/sshd_config',
         onlyif  => 'match AcceptEnv/*[.="GIT_*"] size == 0',
         changes => [
